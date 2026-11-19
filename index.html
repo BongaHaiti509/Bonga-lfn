@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101010">
+  <title>HAÏTI LA FLEUR NOIR — La voix des citoyens</title>
+  <meta name="description" content="Espace citoyen haïtien de débat, d'information et de participation démocratique.">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#accueil"><span class="flower">✿</span><span>HAÏTI <b>LA FLEUR NOIR</b><small>LA VOIX DES CITOYENS</small></span></a>
+    <nav><a href="#candidats">Candidats</a><a href="#debats">Débats</a><a href="#sondage">Sondage</a></nav>
+    <button id="loginOpen" class="btn btn-light">Se connecter</button>
+  </header>
+
+  <main>
+    <section id="accueil" class="hero">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <div class="flag"><i></i><i></i></div>
+        <p class="eyebrow">AYITI SE LAKAY NOU</p>
+        <h1>Une nation.<br><em>Des voix.</em> Un avenir.</h1>
+        <p class="lead">Un espace citoyen pour découvrir les propositions, poser des questions et échanger dans le respect.</p>
+        <a class="btn btn-red" href="#candidats">Découvrir les candidats</a>
+        <p class="notice">Plateforme citoyenne indépendante — les sondages ici ne sont pas des résultats électoraux officiels.</p>
+      </div>
+      <div class="hero-flower" aria-hidden="true">✿</div>
+    </section>
+
+    <section class="intro section">
+      <p class="eyebrow">L'ENGAGEMENT COMMENCE ICI</p>
+      <h2>Ann pale. Ann koute. Ann bati.</h2>
+      <p>Informez-vous, comparez les idées et participez à une conversation constructive sur l'avenir d'Haïti.</p>
+    </section>
+
+    <section id="candidats" class="section">
+      <div class="section-head"><div><p class="eyebrow">FAIRE CONNAISSANCE</p><h2>Les candidats</h2></div><span class="tag">Profils & programmes</span></div>
+      <div id="candidateGrid" class="candidate-grid">
+        <article class="candidate-card">
+          <div class="candidate-placeholder">✿</div><div class="candidate-body"><span class="tag">Profil à compléter</span><h3>Ajouter un candidat</h3><p>Les profils seront publiés par l'équipe de modération avec les informations vérifiées.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="sondage" class="poll-section">
+      <div class="section poll-inner">
+        <div><p class="eyebrow">LA PAROLE AUX CITOYENS</p><h2>Quel programme vous convainc ?</h2><p>Exprimez votre opinion. Une participation par compte connecté.</p><p class="notice">Ce sondage est indicatif et ne constitue pas un vote officiel.</p></div>
+        <div class="poll-box"><h3>Sondage citoyen</h3><div id="pollOptions"><p class="muted">Les options du sondage seront affichées ici lorsque les candidats seront ajoutés.</p></div><button id="pollSubmit" class="btn btn-red" disabled>Envoyer mon choix</button><p id="pollMessage" class="form-message"></p></div>
+      </div>
+    </section>
+
+    <section id="debats" class="section">
+      <div class="section-head"><div><p class="eyebrow">ÉCHANGEONS AVEC RESPECT</p><h2>Place au débat</h2></div><span class="tag">Discussion citoyenne</span></div>
+      <div class="discussion-layout">
+        <div class="discussion-intro"><h3>Une idée, une question ?</h3><p>Partagez une question ou une réflexion sur les priorités nationales. Les commentaires nécessitent une connexion.</p><button class="btn btn-dark" id="commentLogin">Participer au débat</button></div>
+        <div class="comments"><form id="commentForm" class="hidden"><label for="commentText">Votre commentaire</label><textarea id="commentText" maxlength="1200" required placeholder="Écrivez votre message..."></textarea><button class="btn btn-red">Publier</button></form><div id="commentsList"><p class="muted">Connectez-vous pour participer. Les commentaires publics apparaîtront ici.</p></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="footer-brand">✿ HAÏTI LA FLEUR NOIR</div><p>Fait pour encourager l'information, le dialogue et la participation citoyenne.</p><small>Respect • Transparence • Dignité</small></footer>
+
+  <dialog id="authDialog">
+    <form method="dialog" class="dialog-close"><button aria-label="Fermer">×</button></form>
+    <p class="eyebrow">ESPACE CITOYEN</p><h2>Connexion</h2>
+    <p class="muted">Entrez votre adresse e-mail. Nous vous enverrons un lien de connexion.</p>
+    <form id="authForm"><label for="email">Adresse e-mail</label><input id="email" type="email" required placeholder="vous@exemple.com"><button class="btn btn-red">Recevoir mon lien</button><p id="authMessage" class="form-message"></p></form>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
